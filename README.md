@@ -1,1 +1,3 @@
-# ds-iu-angular
+# DsIu Angular
+
+ES una libreria de componentes para angular

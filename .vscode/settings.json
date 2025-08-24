@@ -1,0 +1,127 @@
+{
+    // Configuración de VS Code para aplicar automáticamente ESLint, Stylelint y Prettier
+
+    // === FORMATEO AUTOMÁTICO ===
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": false,
+
+    // === ACCIONES AL GUARDAR ===
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.fixAll.eslint": "explicit",
+        "source.fixAll.stylelint": "explicit",
+        "source.organizeImports": "explicit"
+    },
+
+    // === CONFIGURACIÓN DE PRETTIER ===
+    "prettier.enable": true,
+    "prettier.requireConfig": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+
+    // === CONFIGURACIÓN DE ESLINT ===
+    "eslint.enable": true,
+    "eslint.validate": ["typescript", "html", "javascript"],
+    "eslint.format.enable": true,
+    "eslint.codeActionsOnSave.mode": "all",
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+
+    // === CONFIGURACIÓN DE STYLELINT ===
+    "stylelint.enable": true,
+    "stylelint.validate": ["css", "scss", "sass"],
+    "css.validate": false,
+    "scss.validate": false,
+    "sass.validate": false,
+
+    // === CONFIGURACIÓN DE TYPESCRIPT ===
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.suggest.autoImports": true,
+    "typescript.preferences.noSemicolons": false,
+    "typescript.preferences.includePackageJsonAutoImports": "on",
+
+    // === CONFIGURACIÓN DE ERROR LENS ===
+    "errorLens.enabledDiagnosticLevels": ["error", "warning", "info"],
+    "errorLens.excludeBySource": ["cSpell", "Grammarly"],
+
+    // === CONFIGURACIÓN DE IMPORT COST ===
+    "importCost.bundleSizeDecoration": "both",
+    "importCost.showCalculatingDecoration": true,
+    "importCost.debug": false,
+
+    // === CONFIGURACIÓN DE ANGULAR ===
+    "angular.enable-strict-mode-prompt": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.eol": "\n",
+
+    // === CONFIGURACIÓN DE EDITOR ===
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.rulers": [80, 120],
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+
+    // === CONFIGURACIÓN DE EXPLORADOR ===
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js, ${capture}.d.ts, ${capture}.js.map",
+        "*.component.ts": "${capture}.component.html, ${capture}.component.scss, ${capture}.component.spec.ts",
+        "*.service.ts": "${capture}.service.spec.ts",
+        "*.module.ts": "${capture}.module.spec.ts",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+        "tsconfig.json": "tsconfig.*.json",
+        "angular.json": ".angular/*",
+        ".eslintrc.js": ".eslintrc.*, .eslintignore",
+        ".stylelintrc.json": ".stylelintignore",
+        ".prettierrc": ".prettierignore"
+    },
+
+    // === CONFIGURACIÓN DE PROBLEMA ===
+    "problems.decorations.enabled": true,
+    "problems.showCurrentInStatus": true,
+
+    // === CONFIGURACIÓN DE BÚSQUEDA ===
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/.angular": true,
+        "**/coverage": true,
+        "**/.nyc_output": true
+    },
+
+    // === CONFIGURACIÓN DE EXTENSIONES RECOMENDADAS ===
+    "extensions.ignoreRecommendations": false
+}

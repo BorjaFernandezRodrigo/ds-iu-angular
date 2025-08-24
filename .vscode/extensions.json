@@ -1,0 +1,38 @@
+{
+    "recommendations": [
+        // === LINTING Y FORMATEO ===
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint",
+
+        // === ANGULAR ===
+        "angular.ng-template",
+
+        // === TYPESCRIPT ===
+        "ms-vscode.vscode-typescript-next",
+
+        // === CSS/SCSS ===
+        "bradlc.vscode-tailwindcss",
+
+        // === UTILIDADES ===
+        "christian-kohler.path-intellisense",
+        "christian-kohler.npm-intellisense",
+        "formulahendry.auto-rename-tag",
+        "ms-vscode.vscode-json",
+        "wix.vscode-import-cost",
+
+        // === GIT ===
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+
+        // === PRODUCTIVIDAD ===
+        "ms-vscode.vscode-todo-highlight",
+        "gruntfuggly.todo-tree",
+        "aaron-bond.better-comments",
+        "vscode-icons-team.vscode-icons",
+
+        // === ANGULAR ESPECÍFICO ===
+        "nrwl.angular-console",
+        "ms-vscode.vscode-typescript-next"
+    ]
+}

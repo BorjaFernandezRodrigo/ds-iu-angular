@@ -1,0 +1,208 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Lint: ESLint Fix",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "lint:fix"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": ["$eslint-stylish"]
+        },
+        {
+            "label": "Lint: Stylelint Fix",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "lint:css:fix"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "Format: Prettier",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "format"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "Lint: All Fix (ESLint + Stylelint)",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "lint:all:fix"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": ["$eslint-stylish"]
+        },
+        {
+            "label": "Check: All (Lint + Format)",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "check:all"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": ["$eslint-stylish"]
+        },
+        {
+            "label": "Build: Angular",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "build"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": ["$tsc"]
+        },
+        {
+            "label": "Serve: Angular Dev",
+            "type": "shell",
+            "command": "npm",
+            "args": ["start"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "typescript",
+                "source": "ts",
+                "applyTo": "closedDocuments",
+                "fileLocation": ["relative", "${workspaceRoot}"],
+                "pattern": "$tsc",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": {
+                        "regexp": "(.*?)\\s*\\d+\\s*errors?"
+                    },
+                    "endsPattern": {
+                        "regexp": "(?:.*?)(?:Compiled|Failed) (?:successfully|with \\d+ errors?).*"
+                    }
+                }
+            }
+        },
+        {
+            "label": "Headwind: Sort Tailwind Classes",
+            "type": "shell",
+            "command": "npx",
+            "args": ["headwind", "src/**/*.{html,ts}"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Angular: Generate Component",
+            "type": "shell",
+            "command": "ng",
+            "args": ["generate", "component", "${input:componentName}"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Angular: Generate Service",
+            "type": "shell",
+            "command": "ng",
+            "args": ["generate", "service", "${input:serviceName}"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "componentName",
+            "description": "Component name",
+            "default": "my-component",
+            "type": "promptString"
+        },
+        {
+            "id": "serviceName",
+            "description": "Service name",
+            "default": "my-service",
+            "type": "promptString"
+        }
+    ]
+}
