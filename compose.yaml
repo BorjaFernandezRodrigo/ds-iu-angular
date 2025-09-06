@@ -1,0 +1,18 @@
+services:
+    dsiu-angular:
+        build: ./front
+        container_name: dsiu-angular
+        ports:
+            - '8081:80'
+        depends_on:
+            postgres:
+                condition: service_healthy
+        networks:
+            - dsiu-network
+
+volumes:
+    postgres_data:
+
+networks:
+    dsiu-network:
+        driver: bridge

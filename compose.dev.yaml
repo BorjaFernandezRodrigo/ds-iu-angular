@@ -1,0 +1,23 @@
+services:
+    dsiu-angular:
+        build:
+            context: ./front
+            dockerfile: Dockerfile.dev
+        container_name: dsiu-angular
+        ports:
+            - '8081:4200'
+        volumes:
+            - ./front/src:/front/src
+        depends_on:
+            postgres:
+                condition: service_healthy
+        networks:
+            - dsiu-network
+
+volumes:
+    postgres_data:
+    redis_data:
+
+networks:
+    dsiu-network:
+        driver: bridge

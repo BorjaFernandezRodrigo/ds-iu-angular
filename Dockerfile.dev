@@ -1,0 +1,10 @@
+ARG NODE_VERSION=20
+
+FROM node:${NODE_VERSION}-alpine
+WORKDIR /front
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+
+EXPOSE 4200
+CMD ["npm", "run", "start:docker"]
