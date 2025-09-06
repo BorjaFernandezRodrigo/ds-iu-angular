@@ -189,7 +189,7 @@ module.exports = tseslint.config(
                 'error',
                 {
                     type: 'attribute',
-                    prefix: ['[A-Z]'],
+                    prefix: '',
                     style: 'camelCase',
                 },
             ],
@@ -197,7 +197,7 @@ module.exports = tseslint.config(
                 'error',
                 {
                     type: 'element',
-                    prefix: ['[A-Z]'],
+                    prefix: '',
                     style: 'camelCase',
                 },
             ],
@@ -229,6 +229,13 @@ module.exports = tseslint.config(
             '@angular-eslint/template/mouse-events-have-key-events': 'error',
             '@angular-eslint/template/no-autofocus': 'error',
             '@angular-eslint/template/no-positive-tabindex': 'error',
+        },
+    },
+    {
+        files: ['**/*.spec.ts'],
+        rules: {
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@angular-eslint/prefer-signals': 'off',
         },
     }
 );
