@@ -7,6 +7,7 @@
 
         // === ANGULAR ===
         "angular.ng-template",
+        "ms-vscode.vscode-typescript-next",
 
         // === TYPESCRIPT ===
         "ms-vscode.vscode-typescript-next",
@@ -20,6 +21,7 @@
         "formulahendry.auto-rename-tag",
         "ms-vscode.vscode-json",
         "wix.vscode-import-cost",
+        "n3rds-inc.time",
 
         // === GIT ===
         "donjayamanne.githistory",
@@ -29,10 +31,9 @@
         "ms-vscode.vscode-todo-highlight",
         "gruntfuggly.todo-tree",
         "aaron-bond.better-comments",
-        "vscode-icons-team.vscode-icons",
 
-        // === ANGULAR ESPECÍFICO ===
-        "nrwl.angular-console",
-        "ms-vscode.vscode-typescript-next"
+        // === TESTING ===
+        "ms-vscode.test-adapter-converter",
+        "hbenl.vscode-test-explorer"
     ]
 }
